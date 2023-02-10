@@ -32,29 +32,29 @@ const Navbar = () => {
         <ul className="hidden md:flex">
                 {
                     menuList?.map((menu,i)=>(
-                        <li className="p-4 text-xl hover:text-cyan-600 text-white" key={i}>
+                        <li className="p-4 text-xl hover:text-[#FF0000] text-white" key={i}>
                             <a href={menu.link}>{menu.name}</a>
                         </li>
                     ))
                 }
-                <li className="p-4 text-xl hover:text-cyan-600 text-white">Contact</li>
+                <li className="p-4 text-xl hover:text-[#FF0000] text-white cursor-pointer">Contact</li>
         </ul>
         <div onClick={handleChange} className="block md:hidden">
             {!nav ? <AiOutlineClose size={20}/> : <AiOutlineMenu size={20}/>}
         </div>
-        <div className={!nav ? 'fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#00091a] ease-in-out duration-500' : 'fixed left-[-100%]'}>
+        <div className={!nav ? 'fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#00091a] ease-in-out duration-500 block md:hidden' : 'fixed left-[-100%]'}>
         <div className="w-full text-2xl m-4">
             <img src={logo} alt="logo" />
         </div>
             <ul className="uppercase p-4">
                  {
                     menuList?.map((menu, i)=>(
-                        <li className="p-4 border-b border-b-gray-900">
+                        <li className="p-4 border-b border-b-gray-900 hover:text-[#FF0000]" key={i}>
                             <a href={menu.link}>{menu.name}</a>
                         </li>
                     ))
                  }
-                 <li className="p-4">Contact</li>  
+                 <li className="p-4 hover:text-[#FF0000] cursor-pointer">Contact</li>  
             </ul>
         </div>
     </div>
